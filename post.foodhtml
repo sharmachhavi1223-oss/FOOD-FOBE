@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="home.css">
+            <link rel="stylesheet" href="style.css">
+                   <script src="script.js"></script>
+
+        
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        </head>
+    <body>
+           
+
+
+
+<div id="post" class="page">
+  <span class="tag-label" style="padding:120px 64px 0;display:block">Share Your Surplus</span>
+  <h2 class="section-title" style="padding:0 64px;margin-bottom:0">Post <em>leftover</em><br>food now</h2>
+
+  <div class="post-layout" style="padding:0 64px">
+    <div class="post-form">
+      <div class="form-section">
+        <span class="fs-label">Event Details</span>
+        <div class="form-row">
+          <div class="field"><label>Your Name / Org</label><input type="text" id="f-name" placeholder="Sharma Family" oninput="updatePreview()"></div>
+          <div class="field"><label>Event Type</label><select id="f-event" onchange="updatePreview()"><option>Wedding Reception</option><option>Engagement</option><option>Birthday Party</option><option>Corporate Event</option><option>Hotel / Restaurant</option><option>Other</option></select></div>
+        </div>
+        <div class="field form-row full"><label>Location / Address</label><input type="text" id="f-loc" placeholder="Baner, Pune" oninput="updatePreview()"></div>
+      </div>
+
+      <div class="form-section">
+        <span class="fs-label">Food Information</span>
+        <div class="food-type-grid" style="margin-bottom:20px">
+          <button class="food-type-btn active" onclick="selectFood(this,'🍛','Curry')">🍛 Curry</button>
+          <button class="food-type-btn" onclick="selectFood(this,'🍚','Rice')">🍚 Rice</button>
+          <button class="food-type-btn" onclick="selectFood(this,'🥘','Dal')">🥘 Dal</button>
+          
+          <button class="food-type-btn" onclick="selectFood(this,'🍲','Mixed')">🍲 Mixed</button>
+          <button class="food-type-btn" onclick="selectFood(this,'🥗','Snacks')">🥗 Snacks</button>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Veg / Non-Veg</label><select id="f-veg"><option>Vegetarian</option><option>Non-Vegetarian</option><option>Mixed</option></select></div>
+          <div class="field"><label>Servings Count</label><input type="number" id="f-serve" placeholder="e.g. 200" min="1" oninput="updatePreview()"></div>
+        </div>
+        <div class="field">
+          <label>Quantity (kg)</label>
+          <div class="qty-slider-wrap">
+            <div class="qty-display"><span id="qty-val">40</span><span class="qty-unit"> kg</span></div>
+            <input type="range" min="5" max="300" value="40" id="qty-range" oninput="document.getElementById('qty-val').textContent=this.value;updatePreview()">
+          </div>
+        </div>
+        <div class="field"><label>Food Description</label><textarea id="f-desc" placeholder="Dal Makhani, Paneer Butter Masala, Naan, Rice, Gulab Jamun..." oninput="updatePreview()"></textarea></div>
+      </div>
+
+      <div class="form-section">
+        <span class="fs-label">Availability Window</span>
+        <p style="font-size:.8rem;color:rgba(245,237,216,.4);margin-bottom:16px">How long will the food be available for pickup?</p>
+        <div class="time-grid">
+          <button class="time-btn" onclick="selectTime(this,'1 hr')">1 hr</button>
+          <button class="time-btn active" onclick="selectTime(this,'2 hrs')">2 hrs</button>
+          <button class="time-btn" onclick="selectTime(this,'3 hrs')">3 hrs</button>
+          <button class="time-btn" onclick="selectTime(this,'4+ hrs')">4+ hrs</button>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <span class="fs-label">Contact</span>
+        <div class="form-row">
+          <div class="field"><label>Phone Number</label><input type="tel" placeholder="+91 98765 43210"></div>
+          <div class="field"><label>Preferred Contact</label><select><option>WhatsApp</option><option>Call</option><option>Either</option></select></div>
+        </div>
+      </div>
+
+      <button class="submit-btn" onclick="submitFood()">🚀 &nbsp; Post Food Listing Now</button>
+    </div>
+
+    <div class="post-preview">
+      <div class="pp-title">Live Preview</div>
+      <div class="preview-card">
+        <div class="pc-hero">
+          <div id="pc-emoji" class="pc-emoji-big">🍛</div>
+          <div class="pc-status"><span class="badge-dot"></span>Live</div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-event" id="pc-event">Wedding Reception</div>
+          <div class="pc-name" id="pc-name">Sharma Family</div>
+          <div class="pc-loc" id="pc-loc">📍 Baner, Pune</div>
+          <div class="pc-tags" id="pc-tags">
+            <span class="pc-tag">🍛 Curry</span>
+            <span class="pc-tag">Vegetarian</span>
+          </div>
+          <div class="pc-footer">
+            <div><div class="pc-qty" id="pc-qty">40 kg</div><div class="pc-qty-lbl">Available</div></div>
+            <div class="pc-timer"><div class="pc-time-val" id="pc-time">2 hrs</div><div class="pc-time-lbl">Pickup window</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;background:rgba(0,201,122,.06);border:1px solid rgba(0,201,122,.12);padding:20px;border-radius:3px">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--jade);margin-bottom:10px">💡 Impact Estimate</div>
+        <div style="font-size:.88rem;color:rgba(245,237,216,.55);line-height:1.6">
+          40 kg of food can feed approximately <b style="color:var(--jade)">120–160 people</b>. Your listing will reach <b style="color:var(--jade)">23 NGOs</b> in a 10 km radius instantly.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="success-overlay" id="success-overlay">
+    <div class="success-icon">✅</div>
+    <div class="success-title">Posted!</div>
+    <div class="success-sub">Your food listing is live — 23 NGOs have been notified</div>
+    <button class="btn-fire" style="margin-top:20px" onclick="document.getElementById('success-overlay').classList.remove('show');showPage('map-page')">🗺️ &nbsp;View on Map</button>
+  </div>
+</div>
