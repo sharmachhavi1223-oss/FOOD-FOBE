@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="home.css">
+            <link rel="stylesheet" href="style.css">
+                   <script src="script.js"></script>
+
+        
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        </head>
+    <body>
+
+<div id="dashboard" class="page">
+  <div class="dash-layout">
+    <div class="dash-sidebar">
+      <div class="sidebar-org">
+        <div class="org-avatar">🏥</div>
+        <div class="org-name">Seva Foundation</div>
+        <div class="org-type">NGO · Pune, Maharashtra</div>
+        <div class="org-badge"><span class="badge-dot"></span>Active & Receiving</div>
+      </div>
+      <div class="sidebar-nav">
+        <div class="snav-item active"><span class="snav-icon">📊</span>Dashboard<span class="snav-badge">3</span></div>
+        <div class="snav-item"><span class="snav-icon">🔔</span>Available Food</div>
+        <div class="snav-item"><span class="snav-icon">✅</span>My Claims</div>
+        <div class="snav-item"><span class="snav-icon">📅</span>Schedule</div>
+        <div class="snav-item"><span class="snav-icon">🗺️</span>Live Map</div>
+        <div class="snav-item"><span class="snav-icon">📈</span>Impact Report</div>
+        <div class="snav-item" style="margin-top:20px"><span class="snav-icon">⚙️</span>Settings</div>
+      </div>
+    </div>
+
+    <div class="dash-main">
+      <div class="dash-header">
+        <div><div class="dash-title">Good evening, Seva Foundation 👋</div><div class="dash-subtitle">3 new food listings are waiting for you to claim</div></div>
+        <div class="dash-date"><div class="dash-date">Today</div><b>Tue, 24 March 2026</b></div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi" style="--kpi-color:var(--jade)"><div class="kpi-val" style="color:var(--jade)">1,240</div><div class="kpi-label">Meals served this month</div><div class="kpi-delta delta-up">↑ 18% vs last month</div></div>
+        <div class="kpi" style="--kpi-color:var(--e)"><div class="kpi-val">3</div><div class="kpi-label">Active listings near you</div><div class="kpi-delta delta-up">↑ 2 new today</div></div>
+        <div class="kpi" style="--kpi-color:var(--gold)"><div class="kpi-val" style="color:var(--gold)">48</div><div class="kpi-label">Total pickups completed</div><div class="kpi-delta delta-up">↑ 5 this week</div></div>
+        <div class="kpi" style="--kpi-color:var(--purple)"><div class="kpi-val" style="color:var(--purple)">94%</div><div class="kpi-label">On-time pickup rate</div><div class="kpi-delta delta-up">↑ 3% improvement</div></div>
+      </div>
+
+      <div class="section-header"><h3>🔥 Available Now — Claim Before It's Gone</h3><button class="see-all" onclick="showPage('map-page')">See on Map →</button></div>
+      <div class="avail-list">
+        <div class="avail-item"><div class="ai-emoji">🍛</div><div><div class="ai-title">Sharma Wedding — Punjabi Feast</div><div class="ai-meta">📍 Baner, Pune &nbsp;·&nbsp; 2.1 km away &nbsp;·&nbsp; ⏰ Expires in 3 hrs</div></div><div class="ai-qty"><div class="ai-qty-n">80 kg</div><div class="ai-qty-l">Veg</div></div><button class="claim-btn">Claim →</button></div>
+        <div class="avail-item"><div class="ai-emoji">🥘</div><div><div class="ai-title">Sunshine Hotel — Dinner Buffet</div><div class="ai-meta">📍 Kothrud, Pune &nbsp;·&nbsp; 3.4 km away &nbsp;·&nbsp; ⏰ Expires in 1.5 hrs</div></div><div class="ai-qty"><div class="ai-qty-n">35 kg</div><div class="ai-qty-l">Mixed</div></div><button class="claim-btn">Claim →</button></div>
+        <div class="avail-item"><div class="ai-emoji">🍲</div><div><div class="ai-title">Verma Family — Birthday Banquet</div><div class="ai-meta">📍 Aundh, Pune &nbsp;·&nbsp; 4.2 km away &nbsp;·&nbsp; ⏰ Expires in 5 hrs</div></div><div class="ai-qty"><div class="ai-qty-n">55 kg</div><div class="ai-qty-l">Veg</div></div><button class="claim-btn">Claim →</button></div>
+      </div>
+
+      <div class="two-col">
+        <div class="panel">
+          <div class="panel-title">📅 This Week's Meals Served</div>
+          <div class="bar-chart">
+            <div class="bar-col"><div class="bar" style="height:40px"></div><div class="bar-lbl">Mon</div></div>
+            <div class="bar-col"><div class="bar" style="height:75px;background:var(--gold)"></div><div class="bar-lbl">Tue</div></div>
+            <div class="bar-col"><div class="bar" style="height:55px"></div><div class="bar-lbl">Wed</div></div>
+            <div class="bar-col"><div class="bar" style="height:90px;background:var(--jade)"></div><div class="bar-lbl">Thu</div></div>
+            <div class="bar-col"><div class="bar" style="height:30px"></div><div class="bar-lbl">Fri</div></div>
+            <div class="bar-col"><div class="bar" style="height:80px;background:var(--e2)"></div><div class="bar-lbl">Sat</div></div>
+            <div class="bar-col"><div class="bar" style="height:60px"></div><div class="bar-lbl">Sun</div></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">⚡ Activity Feed</div>
+          <div class="feed-item"><div class="feed-dot fd-green"></div><div><div class="feed-text"><b>New listing!</b> Patel Engagement — 70 kg veg food in Wakad</div><div class="feed-time">2 minutes ago</div></div></div>
+          <div class="feed-item"><div class="feed-dot fd-orange"></div><div><div class="feed-text"><b>Claimed by you:</b> Gupta Wedding — 90 kg picked up</div><div class="feed-time">Yesterday, 8:30 PM</div></div></div>
+          <div class="feed-item"><div class="feed-dot fd-gold"></div><div><div class="feed-text"><b>Impact:</b> Last pickup fed <b>260 people</b> at Yerawada shelter</div><div class="feed-time">Yesterday, 6:45 PM</div></div></div>
+          <div class="feed-item"><div class="feed-dot fd-green"></div><div><div class="feed-text"><b>New listing!</b> Hotel Sunshine Buffet — 35 kg in Kothrud</div><div class="feed-time">2 hrs ago</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
