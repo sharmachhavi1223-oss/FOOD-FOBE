@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="home.css">
+       <link rel="stylesheet" href="style.css">
+       <script src="script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        </head>
+    <body>
+
+        
+<div id="cur"></div>
+<div id="cur2"></div>
+<canvas id="bg-canvas"></canvas>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="logo" onclick="showPage('home')">Anna<span>Daan</span></div>
+  <div class="nav-pages">
+    <button class="nav-btn active" onclick="showPage('home')">🏠 Home</button>
+    <button class="nav-btn" onclick="showPage('post')">🍱 Post Food</button>
+    <button class="nav-btn" onclick="showPage('dashboard')">📊 NGO Dashboard</button>
+    <button class="nav-btn" onclick="showPage('map-page')">🗺️ Live Map</button>
+    <button class="nav-btn" onclick="showPage('mobile')">📱 Mobile App</button>
+  </div>
+  <button class="btn-nav" onclick="showPage('post')">Post Food →</button>
+</nav>
+
+        <div id="home" class="page active">
+  <section class="hero">
+    <div class="hero-bg-orb orb1"></div>
+    <div class="hero-bg-orb orb2"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span class="badge-dot"></span><span>Zero Food Waste · Active in 18 Cities</span></div>
+      <h1 class="hero-h">
+        <span style="display:block">Shaadi ka</span>
+        <span class="fire" style="display:block">khana</span>
+        <span class="stroke" style="display:block">waste</span>
+        <span style="display:block">nahi <span class="gold">hai.</span></span>
+      </h1>
+      <p class="hero-sub">India's weddings produce hundreds of kilos of leftover food every day. AnnaDaan connects hosts with NGOs, shelters & communities in real-time — so every meal finds a mouth.</p>
+      <div class="hero-actions">
+        <button class="btn-fire" onclick="showPage('post')">🍱 &nbsp;Post Your Food</button>
+        <button class="btn-ghost" onclick="showPage('map-page')">🗺️ &nbsp;Browse Live Map</button>
+      </div>
+    </div>
+    <div class="hero-floats">
+      <div class="hfloat"><div class="hf-icon">🍽️</div><div><div class="hf-num" id="live-num">92.4K</div><div class="hf-lbl">Meals Saved</div></div></div>
+      <div class="hfloat"><div class="hf-icon">🏢</div><div><div class="hf-num" style="color:var(--jade)">480+</div><div class="hf-lbl">NGOs Active</div></div></div>
+      <div class="hfloat"><div class="hf-icon">⚡</div><div><div class="hf-num" style="color:var(--cream);font-size:1.4rem">&lt;2 hrs</div><div class="hf-lbl">Avg Pickup</div></div></div>
+    </div>
+  </section>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ti">Wedding Surplus<span class="ti-dot"></span></span><span class="ti">NGO Distribution<span class="ti-dot"></span></span><span class="ti">Hotel Buffet<span class="ti-dot"></span></span><span class="ti">Zero Waste Events<span class="ti-dot"></span></span><span class="ti">Aaj kisi ko bhooka mat rehne do<span class="ti-dot"></span></span><span class="ti">Real-Time Listings<span class="ti-dot"></span></span><span class="ti">Shelters & PGs<span class="ti-dot"></span></span><span class="ti">18 Cities Live<span class="ti-dot"></span></span>
+      <span class="ti">Wedding Surplus<span class="ti-dot"></span></span><span class="ti">NGO Distribution<span class="ti-dot"></span></span><span class="ti">Hotel Buffet<span class="ti-dot"></span></span><span class="ti">Zero Waste Events<span class="ti-dot"></span></span><span class="ti">Aaj kisi ko bhooka mat rehne do<span class="ti-dot"></span></span><span class="ti">Real-Time Listings<span class="ti-dot"></span></span><span class="ti">Shelters & PGs<span class="ti-dot"></span></span><span class="ti">18 Cities Live<span class="ti-dot"></span></span>
+    </div>
+  </div>
+
+  <section class="home-how">
+    <span class="tag-label">How It Works</span>
+    <h2 class="section-title">3 steps to <em>save</em><br>a meal tonight</h2>
+    <div class="hh-grid">
+      <div class="hh-step"><div class="hh-num">01</div><span class="hh-icon">📸</span><div class="hh-title">Post your surplus</div><div class="hh-desc">List food type, quantity, location & availability window. Takes 90 seconds from your phone.</div></div>
+      <div class="hh-step"><div class="hh-num">02</div><span class="hh-icon">🔔</span><div class="hh-title">NGOs get alerted</div><div class="hh-desc">Registered organizations within range get instant notifications and claim what they can handle.</div></div>
+      <div class="hh-step"><div class="hh-num">03</div><span class="hh-icon">🚗</span><div class="hh-title">Pickup & deliver</div><div class="hh-desc">They arrange pickup within your window. You get confirmation. Food feeds real people tonight.</div></div>
+    </div>
+  </section>
+
+  <section class="home-cards">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0">
+      <div><span class="tag-label">Live Now</span><h2 class="section-title">Food available <em>near you</em></h2></div>
+      <button class="btn-ghost" onclick="showPage('map-page')" style="margin-bottom:8px">View All on Map →</button>
+    </div>
+    <div class="hc-row">
+      <div class="mini-card"><div class="mc-top" style="background:radial-gradient(ellipse,#2A0D00,#070706)"><div class="mc-glow" style="background:rgba(255,61,0,.35)"></div><div class="mc-emoji">🍛</div></div><div class="mc-body"><div class="mc-src">Wedding Reception</div><div class="mc-title">Sharma Family Feast</div><div class="mc-loc">📍 Baner, Pune</div><div class="mc-footer"><span class="mc-qty">~80 kg · Veg</span><span class="mc-time">⏰ 3 hrs</span></div></div></div>
+      <div class="mini-card"><div class="mc-top" style="background:radial-gradient(ellipse,#001A0B,#070706)"><div class="mc-glow" style="background:rgba(0,201,122,.3)"></div><div class="mc-emoji">🥘</div></div><div class="mc-body"><div class="mc-src">Hotel Buffet</div><div class="mc-title">Sunshine Hotel Surplus</div><div class="mc-loc">📍 Kothrud, Pune</div><div class="mc-footer"><span class="mc-qty">~35 kg · Mixed</span><span class="mc-time">⏰ 1.5 hrs</span></div></div></div>
+      <div class="mini-card"><div class="mc-top" style="background:radial-gradient(ellipse,#1A1200,#070706)"><div class="mc-glow" style="background:rgba(255,201,71,.3)"></div><div class="mc-emoji">🍲</div></div><div class="mc-body"><div class="mc-src">Birthday Banquet</div><div class="mc-title">Verma Celebration</div><div class="mc-loc">📍 Aundh, Pune</div><div class="mc-footer"><span class="mc-qty">~55 kg · Veg</span><span class="mc-time">⏰ 5 hrs</span></div></div></div>
+    </div>
+  </section>
+</div>
+
+        </body>
+        </html>
